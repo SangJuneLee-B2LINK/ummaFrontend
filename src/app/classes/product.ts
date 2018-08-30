@@ -1,9 +1,9 @@
 export class Product {
     id: number;
     pimsId: Number;
-    catId1: Number;
-    catId2: Number;
-    catId3: Number;
+    catIdDepth1: Number;
+    catIdDepth2: Number;
+    catIdDepth3: Number;
     brId: Number;
     sku: string;
     barcode: string;
