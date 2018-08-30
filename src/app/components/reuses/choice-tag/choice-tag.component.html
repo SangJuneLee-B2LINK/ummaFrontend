@@ -1,0 +1,18 @@
+<div class="modal_area form" id="modal2" style="width: 600px; height:450px; display: block;">
+  <div class="header">
+      <strong class="pop_tit">Favorite tags</strong>
+  </div>
+  <div class="content">
+      <p class="s_dsc">Please select your favorite tag.</p>
+      <div class="tag_wrap">
+          <div class="tag_area">
+              <button *ngFor="let tag of tags" type="button" class="tag" 
+              [class.on]="selectedTags.has(tag)" (click)="selectTag(tag)">{{tag}}</button>
+          </div>
+          <div class="btn_area">
+              <button type="button" class="btn" id="btnModalDefault" style="width:297px" (click)="clickOk()">OK</button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="dimmed on" (click)="clickClose()"></div>

@@ -1,0 +1,27 @@
+<div id="footer">
+	<div class="f_inner">
+		<div class="box" style="padding-left: 70px;">
+			<strong class="f_title">Support</strong>
+			<div class="f_menu">
+				<a href="https://www.umma-beauty.com/en/index.php" target="_blank">About Umma</a>
+				<a routerLink="/helpdesk/terms">Terms of service</a>
+				<a routerLink="/helpdesk/privacy">Privacy policy</a>
+				<a routerLink="/helpdesk/search/list">Help desk</a>
+				<a (click)="openEmailInquiry()">Email inquiry</a>
+			</div>
+		</div>
+		<div class="box">
+			<strong class="f_title">Company</strong>
+			<address class="address">1239 Broadway, 9th Floor, New <br>York, NY 10001+1 212.673.3970</address>
+		</div>
+		<div class="box">
+			<strong class="f_title">Contact</strong>
+			<div class="mail_to">
+				<a href="mailto:support@umma.com">Sales : contect@umma.com </a>
+				<a href="mailto:support@umma.com">System : support@umma.com</a>
+			</div>
+			<!-- <button routerLink="/signup" type="button" class="signup">SignUp Free</button> -->
+		</div>
+	</div>
+</div>
+<app-connect-mail *ngIf="isShowConnectMail" (closeModal)="closeModal()"></app-connect-mail>

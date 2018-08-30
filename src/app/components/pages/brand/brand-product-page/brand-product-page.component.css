@@ -1,0 +1,68 @@
+/* common */
+.tags .tag_area{margin-top:5px}
+.tags .tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:3px 7px;border:solid 1px #ededed;background:#fff;font-size:12px;color:#000}
+
+/* product_list */
+.product_list ul{margin-left:-20px}
+.product_list ul:after{content:'';clear:both;display:block}
+.product_list li{float:left;border-bottom:1px solid rgba(216, 216, 216, 0.5)}
+.product_list li app-product-card{position:relative;width:220px;height:336px;margin:20px 0 12px 20px; display:block;}
+
+
+/* tag_wrap filter */
+.tag_wrap.filter{border-bottom:1px solid #d8d8d8}
+.filter .tag_area .tag{position:relative;display:inline-block;margin:5px 0 0 5px;padding:6px 27px 7px 7px;border:solid 1px #d0d6dd;background:#fff;letter-spacing:-0.3px;font-weight:bold;font-size:14px;color:#000}
+.filter .tag_area .tag .tag_delete{position:absolute;right:0;top:0;width:27px;height:32px;background:url(../../../../../assets/images/common/tag_delete.png) no-repeat 50% 50%}
+
+/* product_inner */
+.product_inner{clear:both;position:relative;width:940px;min-height:1183px;margin:0 auto;text-align:left;}
+.product_inner app-filter-condition{display: block;width:220px;min-height:1183px;background:#fff;float:left;}
+.product_inner .product_list_top{position:relative;padding:0 45% 15px 0}
+.product_inner .product_list .s_title{display:inline-block;padding:20px 0 0 0;font-weight:bold;font-size:14px}
+.product_inner .product_list .s_title + .select_area{position:absolute;right:0;top:12px;min-width:80px;background:#f9f9f9;z-index:1}
+.product_inner .product_list .s_title + .select_area .select_box{position:static;min-width:80px}
+.product_inner .product_list .s_title + .select_area .slct_list{display:none;position:static;min-width:80px}
+.product_inner .product_list .s_title + .select_area.on .slct_list{display:block}
+.product_inner .product_list .s_title + .select_area li{float:none}
+.product_inner .product_list{width:720px;padding:0 0 0 19px;float:right;border-left:1px solid #afafaf}
+
+/* product filter */
+.filter_wrap.product .tags .tag_area{display:none}
+.filter_wrap.product .tags .tag_area.on{display:block}
+.filter_wrap.product .tag_add{width:36px;height:36px;border:1px dashed #d0d6dd;background:#f8f8f8 url(../../../../../assets/images/common/btn_add.png) no-repeat 50% 50%}
+
+/* like */
+.like.product_inner{min-height:1263px}
+.like.product_inner .filter_wrap{min-height:1263px}
+.like_top{overflow:hidden;margin-top:40px}
+.like_top .btn_right .btn{width:116px}
+.like .product_list li .box .checkbox_box{position:static;min-height:20px}
+.like .product_list li .box .checkbox_box label{position:absolute;left:0;top:0;right:0;bottom:100px}
+
+/* like filter */
+.filter_wrap.like .tag_wrap{padding:0;background:#fff}
+.filter_wrap.like .tag_area{margin-top:5px}
+.filter_wrap.like .tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:8px;border:solid 1px #ededed;background:#fff;font-size:12px;color:#000}
+.filter_wrap.like .tag_wrap .tag_area .tag:hover,.filter_wrap.like .tag_wrap .tag_area .tag.on{border:solid 1px #000;background:#f7e4d0}
+
+/* brand top */
+.brand_top{height:300px;font-size:12px}
+.brand_top .brand_banner{float:left;width:700px;height:300px;background-repeat:no-repeat;background-position:0 50%;background-size:700px auto;color:#fff}
+.brand_top .inner .brand_info{padding:60px 0 0 80px;width:300px}
+.brand_top .tag_area{overflow-x:hidden;overflow-y:auto;max-height:128px;margin:5px 0 0 -5px}
+.brand_top .tag_area .tag{display:inline-block;margin:5px 0 0 3px;border:1px solid #ededed;padding:2px 10px 4px;background:#fff;color:#000}
+.brand_top .like_area{margin-top:9px}
+.brand_top .like_area .name{font-size:16px}
+.brand_top .like_area .number{display:inline-block;margin-left:15px;padding-left:18px;letter-spacing:-0.6px;background:url(../../../../../assets/images/product/ico_brand_like_white.png) no-repeat 0 3px}
+.brand_top .logo{overflow:hidden;max-height: 160px;vertical-align:middle}
+.brand_top .logo img{max-height:160px}
+.brand_top .brand_story{overflow:hidden;height:300px;background-color:rgba(0, 0, 0, 0.1)}
+.brand_top .brand_story .video_area{position:relative;width:240px;height:150px}
+.brand_top .brand_story .video_area iframe{width:100%;border:0}
+.brand_top .brand_story .brand_desciption{margin-top:17px;padding:0 15px}
+.brand_top .brand_story .video_area + .brand_desciption{overflow:hidden;height:72px;-webkit-line-clamp:4;text-overflow:ellipsis;word-wrap:break-word;word-break:break-all}
+.brand_top .brand_story .btn{margin:15px 5px 0;width:230px}
+.brand_top .brand_story .pop_video{position:absolute;left:0;top:0;right:0;bottom:0}
+
+#sortby_title{width: 150px;}
+#sortby_ul{margin-left:0;}  

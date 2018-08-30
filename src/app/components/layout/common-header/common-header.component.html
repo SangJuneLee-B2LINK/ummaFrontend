@@ -1,0 +1,138 @@
+<!-- header -->
+<div id="header">
+    <div class="top_menu">
+      <h1>
+        <a routerLink="/member/home">
+          <img src="../../../../assets/images/common/logo.png" alt="logo">
+        </a>
+      </h1>
+      <div class="left_menu">
+        <a routerLink="/members/product">PRODUCT</a>
+        <a routerLink="/members/brands">BRAND</a>
+        <!-- <a routerLink="/member/rank">RANKING</a> -->
+      </div>
+      <div class="right_menu">
+        <a class="inquiry" (click)="clickRightMenu('inquiry')" data-dropmenu="inquiry">
+          <span class="ico inquiry">inquiry</span>
+        </a>
+        <!-- <a class="transaction" (click)="clickRightMenu('transaction')" data-dropmenu="transaction">
+          <span class="ico transaction">transaction</span>
+          <em class="num">22</em>
+        </a> -->
+        <a class="like" (click)="clickRightMenu('like')" data-dropmenu="like">
+          <span class="ico like">wishList</span>
+          <em class="num">{{numOfWishs}}</em>
+        </a>
+        <a class="search" (click)="searchBarOpen(searchInputRef)">
+          <span class="ico search">search</span>
+        </a>
+        <a class="signup" (click)="clickRightMenu('mypage')">
+          <span class="thumb">
+            <!-- [D] 프로필 이미지 -->
+            <img src="../../../../assets/images/common/logo.png" alt="logo">
+            <!--// 프로필 이미지 -->
+          </span>Brent artinMartinMartin</a>
+        <!-- [D] top dropmenu -->
+        <div class="top_layer inquiry" (click)="selectRightMenuDetail('inquiry')">
+          <ul>
+            <li>
+              <div class="content">
+                <strong class="tit">Product inquiryinquiryinquiryinquiryinquiryinquiry</strong>
+                <p class="text">Dentists Are Smiling Over Painl…</p>
+              </div>
+              <span class="date">2019-01-01</span>
+            </li>
+            <li>
+              <div class="content">
+                <strong class="tit">Product inquiry</strong>
+                <p class="text">Dentists Are Smiling Over Painl…</p>
+              </div>
+              <span class="date">2019-01-01</span>
+            </li>
+            <li>
+              <div class="content">
+                <strong class="tit">Product inquiry</strong>
+                <p class="text">Dentists Are Smiling Over Painl…</p>
+              </div>
+              <span class="date">2019-01-01</span>
+            </li>
+          </ul>
+          <a routerLink="/member/inquiry/list" class="btn_view">View</a>
+        </div>
+        <!-- <div class="top_layer transaction" (click)="selectRightMenuDetail('transaction')">
+          <ul>
+            <li>
+              <div class="content">
+                <strong class="tit">Transaction ID</strong>
+                <p class="text">KOREA - 20000ea ( $ 300,000)</p>
+              </div>
+              <em class="status">Approval</em>
+            </li>
+            <li>
+              <div class="content">
+                <strong class="tit">Transaction ID</strong>
+                <p class="text">Transaction Title</p>
+              </div>
+              <em class="status">ing</em>
+            </li>
+            <li>
+              <div class="content">
+                <strong class="tit">Transaction ID</strong>
+                <p class="text">Transaction Title</p>
+              </div>
+              <em class="status">Status</em>
+            </li>
+          </ul>
+          <a class="btn_view">View</a>
+        </div> -->
+        <div class="top_layer like" (click)="selectRightMenuDetail('like')">
+          <ul>
+            <li>
+              <span class="thumb">
+                <img src="../../../../assets/images/@dummy/@sample6.jpg" alt="">
+              </span>
+              <div class="content">
+                <strong class="tit">FACETONE</strong>
+                <p class="text">Tonymory</p>
+              </div>
+              <button type="button" class="btn_delete">Delete</button>
+            </li>
+            <li>
+              <span class="thumb">
+                <img src="../../../../assets/images/@dummy/@sample7.jpg" alt="">
+              </span>
+              <div class="content">
+                <strong class="tit">FACETONE</strong>
+                <p class="text">Tonymory</p>
+              </div>
+              <button type="button" class="btn_delete">Delete</button>
+            </li>
+            <li>
+              <span class="thumb">
+                <img src="../../../../assets/images/@dummy/@sample.jpg" alt="">
+              </span>
+              <div class="content">
+                <strong class="tit">FACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONEFACETONE</strong>
+                <p class="text">TonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymoryTonymory</p>
+              </div>
+              <button type="button" class="btn_delete">Delete</button>
+            </li>
+          </ul>
+          <a routerLink="/member/wishlist" class="btn_view">View</a>
+        </div>
+        <div class="top_layer mypage" (click)="selectRightMenuDetail('mypage')">
+          <a routerLink="/member/myinfo" class="btn_profile">PROFILE</a>
+          <a (click)="logout()" class="btn_logout">LOGOUT</a>
+        </div>
+        <!-- //top dropmenu -->
+      </div>
+      <div class="top_search_bar" [class.on]="isSearchOn">
+        <div class="input_text">
+          <input #searchInputRef type="search" placeholder="Product Name…" [(ngModel)]="searchInput" (keydown.enter)="search()">
+        </div>
+        <button type="button" class="btn_search" (click)="search()">search</button>
+      </div>
+    </div>
+  </div>
+  <!-- //header -->
+  <div *ngIf="isMenubarOpen" class="transparent-curtain" (click)="menubarClose()"></div>

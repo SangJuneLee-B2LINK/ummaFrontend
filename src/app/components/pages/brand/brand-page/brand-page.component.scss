@@ -1,0 +1,32 @@
+.h3_title{margin-top:27px;font-size:37px;color:#dbb8a7}
+
+/* top_content */
+.top_content{margin-top:40px}
+.top_content:after{content:'';display:block;clear:both}
+.top_content .h2_title{float:left}
+.top_content .top_search_bar{float:right}
+.top_content .top_search_bar .input_text{display:inline-block;width:180px;padding:6px 3px 5px;border:0;border-bottom:1px solid #000}
+.top_content .top_search_bar .btn_search{overflow:hidden;display:inline-block;width:30px;height:35px;text-indent:-999px;background:url(../../../../../assets/images/form/ico_brand_search.gif) no-repeat 50% 50%}
+
+/* keyword_area */
+.keyword_area{margin:10px 0 0 -3px}
+.keyword_area .keyword{display:inline-block;margin-left:3px;padding:4px 0;width:26px;border-radius:4px;background:#efeded;font-size:12px}
+.keyword_area .keyword.all,.keyword_area .keyword.etc{padding:4px 8px;width:auto}
+.keyword_area .keyword:hover,.keyword_area .keyword:focus,.keyword_area .keyword.on{background:#f7e4d0}
+.keyword_content .box{display:none}
+.keyword_content .box.on{display:block}
+
+/* list_brand */
+.list_brand{margin:0 0 49px -20px}
+.list_brand:after{content:'';display:block;clear:both}
+.list_brand li{float:left;margin-left:20px;width:300px;height:261px;margin-bottom:20px;cursor: pointer;}
+.list_brand .logo{width:71px;height:60px}
+.list_brand .logo:after{content:'';display:inline-block;height:100%;vertical-align:middle}
+.list_brand .logo img{max-height:80px;vertical-align:middle}
+.list_brand .dsc_area{margin-top:9px}
+.list_brand .dsc_area .info:after{content:'';display:block;clear:both}
+.list_brand .dsc_area .name{overflow:hidden;float:left;width:50%;white-space:nowrap;text-overflow:ellipsis;font-size:16px}
+.list_brand .dsc_area .number{overflow:hidden;float:right;width:50%;white-space:nowrap;text-overflow:ellipsis}
+.list_brand .dsc_area .description{overflow:hidden;display:-webkit-box;margin-top:12px;height:64px;-webkit-box-orient:vertical;-webkit-line-clamp:2;word-wrap:break-word;word-break:break-all;font-size:16px}
+.list_brand .tag_area{margin:10px 0 0 -5px; height: 99px; overflow: auto;}
+.list_brand .tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:3px 8px;border-radius:2px;border:1px solid #ededed;font-size:12px}

@@ -1,0 +1,31 @@
+export class Seller {
+    id: Number;
+    realm: string;
+    firstName: string;
+    lastName: string;
+    password: string;
+    passwordUpdated: string;
+    email: string;
+    emailVerified: string;
+    emailVerifiedUpdated: Date;
+    verificationToken: string;
+    brId: Number;
+    nickName: string;
+    avatar: string;
+    position: string;
+    phone: string;
+    mobile: string;
+    comments: string;
+    lastLogin: Date;
+    loginCount: Number;
+    termsAgreed: Number;
+    termsAgreedUpdated: Number;
+    receiveInfoAgreed: Number;
+    receiveInfoAgreedUpdated: Date;
+    receiveInfoMethod: string;
+    status: Boolean;
+    statusUpdated: Date;
+    created: Date;
+    updated: Date;
+    deleted: Date;
+}

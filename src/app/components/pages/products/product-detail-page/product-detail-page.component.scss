@@ -1,0 +1,58 @@
+.h2_title{font-size:20px}
+.inner{overflow:hidden;padding:0 80px}
+.tags{margin-top:10px}
+.tags .tag_area{margin-top:2px}
+.tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:3px 7px;border:solid 1px #ededed;background:#fff;font-size:12px;color:#000}
+
+.tbl_thead{margin-top:5px;border:1px solid #eee}
+.tbl_thead thead th{background:#faf9f7;font-weight:bold;color:#9b9b9b}
+.tbl_thead th,.tbl_thead td{padding:5px 10px 4px;text-align:left;border-left:1px solid #eee;border-top:1px solid #eee}
+.tbl_thead thead th{border-top:none}
+.tbl_thead tbody th,.tbl_thead tbody td:first-child{border-left:none}
+.tbl_thead tbody td{background:#fff}
+
+.product_detail{margin:48px 0}
+.product_detail:after{content:'';display:block;clear:both}
+.product_detail .thumb_area{float:left;margin-right:20px}
+.product_detail .thumb{width:300px;height:300px}
+.product_detail .thumb img{max-width:300px;max-height:300px}
+.product_detail .btn_area button{height:36px;border:1px solid #000;letter-spacing:0.9px;font-size:11px;font-weight:bold;color:#000}
+.product_detail .btn_area button .ico{overflow:hidden;display:inline-block;margin-right:8px;width:13px;height:12px;text-indent:-99px}
+.product_detail .btn_area .btn_wish{width:100%}
+.product_detail .btn_area .btn_wish .ico{vertical-align:-2px;background:url(../../../../../assets/images/product/ico_like.png) no-repeat 0 0}
+.product_detail .btn_area .btn_inquiry{width:210px}
+.product_detail .btn_area .btn_inquiry .ico{margin-right:8px;vertical-align:-1px;background:url(../../../../../assets/images/product/ico_inquiry.png) no-repeat 0 0}
+.product_detail .content_area{overflow:hidden}
+.product_detail .brand_name{margin-top:10px}
+.product_detail .des_list{overflow:hidden;margin-top:10px}
+.product_detail .des_list li{float:left;width:33.33%}
+.product_detail .des_list li .s_title{display:block}
+.product_detail .des_list li .text{padding-top:2px}
+.product_detail .matched{margin-top:10px}
+.product_detail .matched .s_title{float:left;margin-right:23px}
+.product_detail .matched .graph_bar{overflow:hidden;height:19px;;line-height:19px;text-align:right;background:#d8d8d8;font-size:11px}
+.product_detail .matched .graph{height:19px;padding-right:10px;background:#dbb8a7}
+.product_detail .matched .percent{display:inline-block}
+.product_detail .pricing{clear:both;margin-top:10px}
+
+.brand_info{padding:25px 0 35px;border-top:1px solid #dcdddf;border-bottom:1px solid #dcdddf}
+.brand_info .h2_title{float:left;width:282px}
+.brand_info .thumb_area{float:left;margin-right:77px;width:84px}
+.brand_info .thumb{border:1px solid #000;height:84px;line-height:82px;text-align:center}
+.brand_info .thumb img{max-width:50px;max-height:50px;vertical-align:middle}
+.brand_info .btn_inquiry{margin-top:5px;width:84px;height:36px;border:1px solid #000;text-align:center;letter-spacing:-0.3px;font-size:11px;font-weight:bold;color:#000}
+.brand_info .btn_inquiry .ico{overflow:hidden;display:inline-block;width:13px;height:12px;margin-right:4px;text-indent:-99px;vertical-align:-1px;background:url(../../../../../assets/images/product/ico_inquiry.png) no-repeat 0 0}
+
+.brand_info .s_title{display:block;margin-top:10px}
+.brand_info .s_title:first-child{margin-top:0}
+.brand_info .content_area{overflow:hidden;margin-top:10px}
+.brand_info .content{overflow:hidden}
+.product_info{padding:35px 0;background:#faf9f7}
+.product_info .h2_title{float:left;width:282px}
+.product_info .content_area{overflow:hidden;margin-top:35px}
+.product_info .content_area:first-child{margin-top:0}
+.product_info .content{overflow:hidden}
+.product_info .tbl_thead{border:1px solid #000}
+.product_info .description{color:#3f3f3f}
+
+.border_box{overflow-x:hidden;overflow-y:auto;height:157px;white-space:pre-line;word-wrap:break-word;}

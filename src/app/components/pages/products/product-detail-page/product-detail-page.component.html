@@ -1,0 +1,326 @@
+<div *ngIf="Product">
+    <div id="container">
+        <div class="product_detail">
+            <div class="inner">
+                <div class="thumb_area">
+                    <div class="thumb">
+                        <img [src]='Product.images' alt="">
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="btn_wish">
+                            <span class="ico"></span>LIKE</button>
+                    </div>
+                </div>
+                <div class="content_area">
+                    <h2 class="h2_title">{{Product.name}}</h2>
+                    <p class="brand_name">{{Product.brId}}</p>
+                    <ul class="des_list">
+                        <li>
+                            <strong class="s_title">Country</strong>
+                            <p class="text">{{Product.producerCtId}}</p>
+                        </li>
+                        <li>
+                            <strong class="s_title">MOQ</strong>
+                            <p class="text">{{Product.moq}} Pieces</p>
+                        </li>
+                        <li>
+                            <strong class="s_title">MSRP</strong>
+                            <p class="text">$ {{Product.retailPrice}}</p>
+                        </li>
+                    </ul>
+                
+                  
+                    <div class="pricing">
+                        <strong class="s_title">Pricing Table</strong>
+                        <div class="tbl_thead">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Purchase Qty.</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                             <tr *ngFor="let row of Product.pricingTable">
+                                 <td>{{row.min}}-{{row.max}}</td>
+                                    <td>US ${{row.price}}</td>
+                             </tr>
+                                    <!--
+                                    <tr>
+                                        <td>-299</td>
+                                        <td>US $8.36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>300-999</td>
+                                        <td>US $7.61</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,000-4,999</td>
+                                        <td>US $6.87</td>
+                                    </tr>
+                                    -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brand_info">
+            <div class="inner">
+                <h2 class="h2_title">Brand Info</h2>
+                <div class="content_area">
+                    <div class="thumb_area">
+                        <div class="thumb">
+                            <img src="../../../../assets/images/common/logo.png" alt="">
+                        </div>
+                        <button type="button" class="btn_inquiry" (click)="openEmailInquiry()">
+                            <span class="ico">inquiry</span>CONNECT</button>
+                    </div>
+                    <div class="content">
+                        <strong class="s_title">common labs</strong>
+                        <strong class="s_title">Items: {{Product.stock}}</strong>
+                   <!-- brand description -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product_info">
+            <div class="inner">
+                <div class="content_area">
+                    <h2 class="h2_title">Product Information</h2>
+                    <div class="content">
+                        <div class="tbl_board">
+                            <table>
+                                <colgroup>
+                                    <col style="width:157px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                 
+                                    <tr>
+                                        <th>
+                                            <div class="text">Category</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.catIdDepth1}}
+                                                <span class="bar">&gt;</span> Category2
+                                                <span class="bar">&gt;</span> Category3</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">MSRP</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">$100</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">MOQ</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.moq}} / ea</div>
+                                        </td>
+                                    </tr>
+                                 
+                                    <tr>
+                                        <th>
+                                            <div class="text">Barcode</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.barcode}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">Country</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.producerCtId}}</div>
+                                        </td>
+                                        <!-- joint -->
+                                
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">생산지역</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.producerArea}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">Manufacturer</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.manufactured}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">Distributor</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.distributor}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">Unavailable Country(s)</div>
+                                        </th>
+                                        <td>
+                                            <div class="text"><div *ngFor="let invCo of Product.invalidCountry">{{invCo.nm}} <br> </div> </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">Current Channels <br> of Distribution</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">VIP, Sepora</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">URL</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">
+                                                <a href="{{Product.refUrl}}" target="_blank">{{Product.refUrl}}</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">MSDS</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">보유</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <!-- certificate -->
+                                        <th>
+                                            <div class="text">Certificate(s)</div>
+                                        </th>
+                                        <td>
+                                            <div class="text" *ngFor="let cert of Product.certificate">{{cert.nm}}</div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">상품용량</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">100 / ml</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">CBM</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.volume}} m2</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">상품규격</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.sizeHorizontal}}mm * {{Product.sizeVertical}}mm * {{Product.sizeHeight}}mm (가로*세로*깊이)</div>
+                                        </td>
+                                    </tr>
+                                     
+                                    <tr>
+                                        <th>
+                                            <div class="text">총중량</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.totalWeight}} g</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">패킹피스</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.inboxQuantity}} ea</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="text">Ingredients</div>
+                                        </th>
+                                        <td>
+                                            <div class="text">{{Product.ingredient}}</div>
+                                        </td>
+                                    </tr>
+                                
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_area">
+                    <h2 class="h2_title">Product Description</h2>
+                    <div class="content">
+                        <div class="border_box">
+                            <span [innerHTML]='Product.contents'></span>
+                            <!-- <textarea placeholder="User Edigging"></textarea> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="content_area">
+                    <h2 class="h2_title">Pricing Table</h2>
+                    <div class="content">
+                        <div class="tbl_thead">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Purchase Qty.</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    <tr *ngFor="let row of Product.pricingTable">
+                                            <td>{{row.min}}-{{row.max}}</td>
+                                               <td>US ${{row.price}}</td>
+                                        </tr>
+                                </thead>
+                                <!-- 
+                                <tbody>
+                                    <tr>
+                                        <td>50-299</td>
+                                        <td>US $8.36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>300-999</td>
+                                        <td>US $7.61</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1,000-4,999</td>
+                                        <td>US $6.87</td>
+                                    </tr>
+                                </tbody>
+                                -->
+                            </table>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="filter_wrap product">
+        <strong class="s_title filterHeader">Filter Conditions</strong>
+        <br> 
+    <div class="keyword">
+        <h2 class="tit">Keyword</h2>
+        <div class="input_area mt5">
+            <div class="input_text">
+                <input #keyword type="text" placeholder="ABC" (keydown.enter)="filterKeyword(keyword)">
+            </div>
+            <button type="button" class="btn_add" (click)="filterKeyword(keyword)">
+                <span class="blind">add</span>
+            </button>
+        </div>
+    </div>
+    <div class="category" #category>
+        <h2 class="tit">Category</h2>
+        <div class="checkbox_wrap" (click)="filterCategory($event.target)">
+            <div class="checkbox_box">
+                <input type="checkbox" id="Skincare">
+                <label for="Skincare">Skincare</label>
+            </div>
+            <div class="checkbox_box">
+                <input type="checkbox" id="Makeup" data-is-parent="y">
+                <label for="Makeup">Makeup</label>
+            </div>
+            <div class="checkbox_area">
+                <div class="checkbox_box">
+                    <input type="checkbox" id="Lip">
+                    <label for="Lip">Lip</label>
+                </div>
+                <div class="checkbox_box">
+                    <input type="checkbox" id="Eye">
+                    <label for="Eye">Eye</label>
+                </div>
+                <div class="checkbox_box">
+                    <input type="checkbox" id="Powder">
+                    <label for="Powder">Powder</label>
+                </div>
+                <div class="checkbox_box">
+                    <input type="checkbox" id="Base">
+                    <label for="Base">Base</label>
+                </div>
+                <div class="checkbox_box">
+                    <input type="checkbox" id="Etc">
+                    <label for="Etc">Etc</label>
+                </div>
+            </div>
+            <div class="checkbox_box">
+                <input type="checkbox" id="Suncare">
+                <label for="Suncare">Suncare</label>
+            </div>
+            <div class="checkbox_box">
+                <input type="checkbox" id="Cleansing">
+                <label for="Cleansing">Cleansing</label>
+            </div>
+            <div class="checkbox_box">
+                <input type="checkbox" id="Body">
+                <label for="Body">Body</label>
+            </div>
+            <div class="checkbox_box">
+                <input type="checkbox" id="Hair">
+                <label for="Hair">Hair</label>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!isBrandHide" class="brand">
+        <h2 class="tit">Brand</h2>
+        <div class="scroll_area">
+            <ul>
+                <li *ngFor="let Brand of Brands" class="scroll_click_content" (click)="filterBrand(Brand)">
+                    <a>{{Brand.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="moq">
+        <h2 class="tit">MOQ</h2>
+        <div class="input_area mt5">
+            <div class="input_text">
+                <input #moq type="number" placeholder="number" (keydown.enter)="filterMoq(moq)">
+            </div>
+            <button type="button" class="btn_add" (click)="filterMoq(moq)"></button>
+        </div>
+    </div>
+    <div class="msrp">
+        <h2 class="tit">MSRP</h2>
+        <div>
+            <input class="msrp_input" type="number" placeholder="$" #msrpFrom>
+            <input class="msrp_input" type="number" placeholder="$" #msrpTo>
+            <button (click)="filterMsrp(msrpFrom, msrpTo)">Go</button>
+        </div>
+    </div>
+    <div class="country">
+        <h2 class="tit">Country</h2>
+        <div class="scroll_area">
+            <ul>
+                <li *ngFor="let country of countries" class="scroll_click_content" (click)="filterCountry(country)">
+                    <a>{{country}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<app-choice-tag *ngIf="isShowChoiceTag" [selectedTagsSaved]="selectedTagsSaved" (modalClose)="modalClose()" (modalSelectTag)="modalSelectTag($event)"></app-choice-tag>

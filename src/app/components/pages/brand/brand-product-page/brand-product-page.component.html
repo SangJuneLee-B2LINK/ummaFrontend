@@ -1,0 +1,127 @@
+<div *ngIf="Brand">
+    <div id="wrap">
+        <div id="container">
+            <div *ngIf="detailUsed" class="brand_top">
+                <div  class="inner">
+                    <div class="brand_banner">
+                        <div class="brand_info">
+                            <div class="logo">
+                                <img src="{{Brand.logo}}" alt="">
+                            </div>
+                            <div class="like_area">
+                                <strong class="name" style="color: #000;">{{Brand.name}}</strong>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="brand_story">
+                        <div class="video_area">
+                            <iframe title="[LANEIGE] 2016 라네즈 'REFILL ME' 캠페인" src="{{Brand.detailMedia}}" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="brand_desciption">
+                            There’s good news for parents who have a child born with significant hearing loss. Advances in technology are making it possible
+                            …There’s good news for parents who have a child born with significant hearing loss. Advances in technology
+                            are making it possible …There’s good news for parents who have a child born with significant hearing
+                            loss. Advances in technology are making it possible …There’s good news for parents who have a child
+                            born with significant hearing loss. Advances in technology are making it possible …There’s good news
+                            for parents who have a child born with significant hearing loss. Advances in technology are making
+                            it possible …
+                        </div>
+                        <button type="button" class="btn" id="btnBrandStory" (click)="isShowBrandStory = true;">Brand Story</button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!detailUsed" class="brand_top">
+                <div class="inner">
+                    <div class="brand_banner" style="background-color: #f3efef; color: black; float: none; width: auto;">
+                        <div class="brand_info" style="width: auto;">
+                            <div class="logo">
+                                <img src="{{Brand.logo}}" alt="">
+                            </div>
+                            <div class="like_area">
+                                <strong class="name">{{Brand.name | uppercase }}</strong>
+                            </div>
+                            <div style="margin-top: 15px; font-size: 13px;">{{Brand.comments}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tag_wrap filter">
+                <div class="inner">
+                    <strong class="s_title">Filter Condition</strong>
+                    <div class="tag_area">
+                        <span *ngFor="let tag of selectedFilterTags" class="tag">{{tag}}
+                            <button type="button" class="tag_delete" (click)="deleteFilter(tag)"></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="product_inner">
+                <app-filter-condition [isBrandHide]="true" (onFilterChange)="onFilterChange($event)" (onTagsChange)="onTagsChange($event)" (onCategoryChange)="onCategoryChange($event)"></app-filter-condition>
+                <div class="product_list">
+                    <div class="product_list_top">
+                        <strong class="s_title">{{productCount}} Products Found</strong>
+                        <div class="select_area gray">
+                            <div class="select_box" (click)="toggleSelectbox($event)">
+                                <a id="sortby_title" class="slct_head">{{sortBy || 'Sorting criteria'}}</a>
+                                <ul id="sortby_ul" class="slct_list" (click)="choiceSelectbox($event)" data-input-name="sortBy">
+                                    <li class="on">
+                                        <a>popular</a>
+                                    </li>
+                                    <li>
+                                        <a>latest</a>
+                                    </li>
+                                    <li>
+                                        <a>sale volume</a>
+                                    </li>
+                                    <li>
+                                        <a>price</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li *ngFor="let product of filteredProducts">
+                            <app-product-card [product]="product"></app-product-card>
+                        </li>
+                    </ul>
+                    <div class="paging_wrap">
+                        <div class="paging_area">
+                            <button type="button" class="btn_prev">&lt;</button>
+                            <span class="paging">
+                                <a href="#" class="on">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">7</a>
+                                <a href="#">8</a>
+                                <a href="#">9</a>
+                                <a href="#">10</a>
+                            </span>
+                            <button type="button" class="btn_next">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="isShowBrandStory" class="modal_area form brand story" style="display: block;">
+        <div class="header">
+            <strong class="pop_tit">{{Brand.name}}</strong>
+        </div>
+        <div class="content">
+            <div class="wizwig_area">
+              <span [innerHTML]='Brand.detailHtml'></span>
+    
+            </div>
+        </div>
+        <button type="button" class="btn_close btnModalClose" (click)="isShowBrandStory = false;">
+            <span>close</span>
+        </button>
+    </div>
+    <div *ngIf="isShowBrandStory" class="dimmed on" (click)="isShowBrandStory = false;"></div>>
+</div>

@@ -1,0 +1,151 @@
+/* common */
+.tags .tag_area{margin-top:5px}
+.tags .tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:3px 7px;border:solid 1px #ededed;background:#fff;font-size:12px;color:#000}
+
+/* product_list */
+.product_list ul{margin-left:-20px}
+.product_list ul:after{content:'';clear:both;display:block}
+.product_list li{float:left;border-bottom:1px solid rgba(216, 216, 216, 0.5)}
+.product_list li app-product-card{position:relative;width:220px;height:336px;margin:20px 0 12px 20px; display:block;}
+
+/* tag_wrap filter */
+.tag_wrap.filter{border-bottom:1px solid #d8d8d8}
+.filter .tag_area .tag{position:relative;display:inline-block;margin:5px 0 0 5px;padding:6px 27px 7px 7px;border:solid 1px #d0d6dd;background:#fff;letter-spacing:-0.3px;font-weight:bold;font-size:14px;color:#000}
+.filter .tag_area .tag .tag_delete{position:absolute;right:0;top:0;width:27px;height:32px;background:url(../../../../../assets/images/common/tag_delete.png) no-repeat 50% 50%}
+
+/* product_inner */
+.product_inner{clear:both;position:relative;width:940px;min-height:1183px;margin:0 auto;text-align:left;}
+.product_inner app-filter-condition{display: block;width:220px;min-height:1183px;background:#fff;float:left;}
+.product_inner .product_list_top{position:relative;padding:0 45% 15px 0}
+.product_inner .product_list .s_title{display:inline-block;padding:20px 0 0 0;font-weight:bold;font-size:14px}
+.product_inner .product_list .s_title + .select_area{position:absolute;right:0;top:12px;min-width:80px;background:#f9f9f9;z-index:1}
+.product_inner .product_list .s_title + .select_area .select_box{position:static;min-width:80px}
+.product_inner .product_list .s_title + .select_area .slct_list{display:none;position:static;min-width:80px}
+.product_inner .product_list .s_title + .select_area.on .slct_list{display:block}
+.product_inner .product_list .s_title + .select_area li{float:none}
+.product_inner .product_list{width:720px;padding:0 0 0 19px;float:right;border-left:1px solid #afafaf}
+
+/* product filter */
+.filter_wrap.product .tags .tag_area{display:none}
+.filter_wrap.product .tags .tag_area.on{display:block}
+.filter_wrap.product .tag_add{width:36px;height:36px;border:1px dashed #d0d6dd;background:#f8f8f8 url(../../../../../assets/images/common/btn_add.png) no-repeat 50% 50%}
+
+/* like */
+.like.product_inner{min-height:1263px}
+.like.product_inner .filter_wrap{min-height:1263px}
+.like_top{margin-top:40px}
+.like_top .btn_right .btn{width:116px}
+.like .product_list li .box .checkbox_box{position:static;min-height:20px}
+.like .product_list li .box .checkbox_box label{position:absolute;left:0;top:0;right:0;bottom:100px}
+
+/* like filter */
+.filter_wrap.like .tag_wrap{padding:0;background:#fff}
+.filter_wrap.like .tag_area{margin-top:5px}
+.filter_wrap.like .tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:8px;border:solid 1px #ededed;background:#fff;font-size:12px;color:#000}
+.filter_wrap.like .tag_wrap .tag_area .tag:hover,.filter_wrap.like .tag_wrap .tag_area .tag.on{border:solid 1px #000;background:#f7e4d0}
+
+#sortby_title{width: 150px;}
+#sortby_ul{margin-left:0;} // project list page sort by 부분 밀리는 ul 예외 처리
+
+li .box {
+	position: relative;
+	width: 220px;
+	height: 336px;
+	margin: 20px 0 12px 20px
+}
+
+li .link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 100px;
+	right: 0
+}
+
+.thumb {
+	overflow: hidden;
+	width: 220px;
+	height: 220px;
+	text-align: center;
+	line-height: 220px
+}
+
+.thumb img {
+	max-width: 220px;
+	max-height: 220px;
+	vertical-align: middle
+}
+
+.text .item_name {
+	letter-spacing: 0.3px
+}
+
+.text .brand_name {
+	font-size: 12px
+}
+
+.text .price {
+	font-size: 12px;
+}
+
+.text .price b {
+	color: #000
+}
+
+.product_info {
+	padding: 0 14px
+}
+
+.product_info .btns {
+	margin-left: -7px
+}
+
+.product_info .btns:after {
+	content: '';
+	display: block;
+	clear: both
+}
+
+.product_info .btns button {
+	width: 30px;
+	height: 32px
+}
+
+.product_info .btns button+button {
+	margin-left: -3px
+}
+
+.product_info .btns .maching {
+	float: right;
+	line-height: 32px;
+	font-size: 11px;
+	color: #989898
+}
+
+.product_info .btns .maching .percentage {
+	padding-left: 7px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000
+}
+
+.product_info .btns .btn_wish {
+	background: url(../../../../../assets/images/home/ico_like.png) no-repeat 0 0
+}
+
+.product_info .btns .btn_inquiry {
+	background: url(../../../../../assets/images/home/ico_inquiry.png) no-repeat 0 0
+}
+
+.price {
+	margin-top: 11px
+}
+
+.productFromPage {
+    cursor: pointer;
+}
+
+.brand_name,
+.product_list .price {
+	font-size: 12px
+}

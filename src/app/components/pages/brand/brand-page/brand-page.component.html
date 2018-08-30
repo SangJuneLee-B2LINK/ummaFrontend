@@ -1,0 +1,68 @@
+<div id="wrap">
+  <div id="container">
+      <div class="inner">
+          <div class="top_content">
+              <h2 class="h2_title f_agaramond">Brand</h2>
+              <div class="top_search_bar">
+                  <div class="input_text">
+                      <input type="search" placeholder="Brand" [(ngModel)]="searchValue" (input)="inputValue($event)">
+                  </div>
+                  <button type="button" class="btn_search">search</button>
+              </div>
+          </div>
+          <div *ngIf="!isShowSearched" (click)="scrollTo($event)" class="keyword_area">
+              <button type="button" class="keyword all on">ALL</button>
+              <button type="button" class="keyword">A</button>
+              <button type="button" class="keyword">B</button>
+              <button type="button" class="keyword">C</button>
+              <button type="button" class="keyword">D</button>
+              <button type="button" class="keyword">E</button>
+              <button type="button" class="keyword">F</button>
+              <button type="button" class="keyword">G</button>
+              <button type="button" class="keyword">H</button>
+              <button type="button" class="keyword">I</button>
+              <button type="button" class="keyword">J</button>
+              <button type="button" class="keyword">K</button>
+              <button type="button" class="keyword">L</button>
+              <button type="button" class="keyword">M</button>
+              <button type="button" class="keyword">N</button>
+              <button type="button" class="keyword">O</button>
+              <button type="button" class="keyword">P</button>
+              <button type="button" class="keyword">Q</button>
+              <button type="button" class="keyword">R</button>
+              <button type="button" class="keyword">S</button>
+              <button type="button" class="keyword">T</button>
+              <button type="button" class="keyword">U</button>
+              <button type="button" class="keyword">V</button>
+              <button type="button" class="keyword">W</button>
+              <button type="button" class="keyword">X</button>
+              <button type="button" class="keyword">Y</button>
+              <button type="button" class="keyword">Z</button>
+              <button type="button" class="keyword etc">ETC</button>
+          </div>
+          <div *ngIf="!isShowSearched" class="keyword_content">
+              <div id="A" class="box on">
+                  <h3 class="h3_title f_agaramond">A</h3>
+                  <div class="list_brand">
+                      <ul>
+                        <!-- todo need to alphabetize -->
+                          <li routerLink="/members/brands/br_id/{{Brand.id}}" *ngFor="let Brand of Brands" (click)="onSelect(Brand)">
+                              <div class="logo">
+                                  <img src="{{Brand.logo}}" alt="{{Brand.name}} Logo">
+                              </div>
+                              <div class="dsc_area">
+                                  <div class="info">
+                                      <strong class="name">{{Brand.name}}</strong>
+                                      <span class="number">Items: {{Brand.productCount}}</span>
+                                  </div>
+                                  <p class="description" [innerHTML]="Brand.comments"></p>
+                              </div>
+                      
+                          </li>
+                         
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

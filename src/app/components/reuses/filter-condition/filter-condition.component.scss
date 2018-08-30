@@ -1,0 +1,61 @@
+/* filter_wrap */
+.filter_wrap .checkbox_wrap{margin:-5px 0 5px}
+.filter_wrap .checkbox_area{padding-left:28px}
+.filter_wrap .checkbox_box{margin-top:13px}
+.filter_wrap .checkbox_box label{letter-spacing:0.7px;color:#000}
+.filter_wrap .input_area{position:relative;padding-right:35px}
+.filter_wrap .input_text{border-right:0}
+.filter_wrap .btn_add{position:absolute;right:0;top:0;width:35px;height:37px;border:1px solid #000;border-left:1px solid #e9e8e8;background:#f8f8f8 url(../../../../assets/images/common/btn_add.png) no-repeat 50% 50%}
+.filter_wrap .scroll_area{margin-top:5px;background:#f8f8f8}
+.filter_wrap .scroll_area ul{overflow-x:hidden;overflow-y:auto;max-height:125px;padding:2px 10px}
+.filter_wrap {
+
+    .msrp {
+
+        .msrp_input {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 3px;
+            width: 80px;
+            height: 30px;
+            margin-right: 5px;
+            padding-left: 10px;            
+        }
+
+        button {
+            border: 1px solid black;
+            border-radius: 3px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+
+/* product filter */
+.filter_wrap.product .tags .tag_area{display:none}
+.filter_wrap.product .tags .tag_area.on{display:block}
+.filter_wrap.product .tag_add{width:36px;height:36px;border:1px dashed #d0d6dd;background:#f8f8f8 url(../../../../assets/images/common/btn_add.png) no-repeat 50% 50%}
+
+/* like filter */
+.filter_wrap.like .tag_wrap{padding:0;background:#fff}
+.filter_wrap.like .tag_area{margin-top:5px}
+.filter_wrap.like .tag_area .tag{display:inline-block;margin:5px 0 0 5px;padding:8px;border:solid 1px #ededed;background:#fff;font-size:12px;color:#000}
+.filter_wrap.like .tag_wrap .tag_area .tag:hover,.filter_wrap.like .tag_wrap .tag_area .tag.on{border:solid 1px #000;background:#f8f8f8}
+
+/* filter_wrap */
+.filter_wrap{padding:8px 20px 50px 0}
+.filter_wrap > div{padding:10px 0;background:url(../../../../assets/images/common/left_dotted.png) repeat-x 0 0}
+.filter_wrap > div:first-child{background:none}
+.filter_wrap .tit{font-size:12px}
+
+.scroll_click_content {
+    line-height: 1.8;
+    padding-left: 5px;
+
+}
+.scroll_click_content:hover {
+    background-color: #f7e4d0;
+}
+
+.filterHeader {font-size:20px;}

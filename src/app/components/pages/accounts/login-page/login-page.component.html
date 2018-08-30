@@ -1,0 +1,150 @@
+<div class="login harf">
+	<div class="column">
+		<div class="inner visual"></div>
+	</div>
+	<div class="column" *ngIf="loginPageType === 'login'">
+		<div class="inner form login">
+			<!-- <div class="tab_menu" (click)="userTypeChoice($event);">
+				<a [class.on]="isBuyer">Buyer</a>
+				<a [class.on]="!isBuyer">Seller</a>
+			</div> -->
+			<div class="tab_cont box on">
+				<div class="top_content">
+					<h1 class="logo">
+						<img src="../../../../assets/images/logo@2x.png" alt="UMMA">
+					</h1>
+					<p class="login_title">Login to Your Account</p>
+				</div>
+				<form>
+					<fieldset>
+						<div class="input_text">
+							<input type="email" autocomplete="off" placeholder="Email" [(ngModel)]="email" name="email">
+                            <span matTooltip="Please input email format" matTooltipPosition="left">?</span>
+						</div>
+						<div class="input_text">
+							<input type="password" autocomplete="off" placeholder="Password" [(ngModel)]="password" name="password">
+                            <span matTooltip="Please include letter, number and special character" matTooltipPosition="left">?</span>
+						</div>
+						<div class="checkbox_box">
+							<input type="checkbox" id="check" [(ngModel)]="isRemember" name="remember">
+							<label for="check">Remember Me</label>
+						</div>
+						<div class="btn_area">
+							<button type="button" class="btn" (click)="login(emailInput, pwdInput)">Login</button>
+							<div class="bar"></div>
+							<button routerLink="/signup" type="button" class="btn white">Sign Up Free</button>
+							<div class="link_area">
+								<a (click)="forgetId()">ForgetID</a>
+								<a (click)="resetPassword()">Reset Password</a>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- forget id page -->
+	<div class="column" *ngIf="loginPageType === 'forget-id'">
+		<div class="inner form">
+			<div class="box">
+				<div class="top_content">
+					<h1 class="logo">
+						<img src="../../../../assets/images/logo@2x.png" alt="UMMA">
+					</h1>
+					<p class="login_title">Forget Your Email</p>
+				</div>
+				<form>
+					<fieldset>
+						<div class="input_text">
+							<input type="text" autocomplete="off" placeholder="Company Name" [(ngModel)]="companyName" name="companyName">
+						</div>
+						<div class="input_text">
+							<input type="text" autocomplete="off" placeholder="Manager" [(ngModel)]="manager" name="manager">
+						</div>
+						<div class="input_text">
+							<input type="tel" autocomplete="off" placeholder="Manager Phone Number" [(ngModel)]="managerPhoneNumber" name="managerPhoneNumber">
+						</div>
+						<div class="btn_area">
+							<button type="button" class="btn" id="btnModal" (click)="emailFind()">Find</button>
+							<button type="button" class="btn back" id="btnModal" (click)="loginPageType = 'login'">Back</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- forget password -->
+	<div class="column" *ngIf="loginPageType === 'forget-password'">
+		<div class="inner form">
+			<div class="box">
+				<div class="top_content">
+					<h1 class="logo">
+						<img src="../../../../assets/images/logo@2x.png" alt="UMMA">
+					</h1>
+					<p class="login_title">Reset Password</p>
+				</div>
+				<form>
+					<fieldset>
+						<div class="input_text">
+							<input type="email" autocomplete="off" placeholder="email">
+						</div>
+						<div class="btn_area">
+							<button type="button" class="btn" id="btnModal" (click)="passwordFind()">Find</button><!--
+							--><button type="button" class="btn back" id="btnModal" (click)="loginPageType = 'login'">Back</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- reset password -->
+	<div class="column" *ngIf="loginPageType === 'reset-password'">
+		<div class="inner form">
+			<div class="box">
+				<div class="top_content">
+					<h1 class="logo">
+						<img src="../../../../assets/images/logo@2x.png" alt="UMMA">
+					</h1>
+					<p class="login_title">Change Your Password</p>
+				</div>
+				<form>
+					<fieldset>
+						<div class="input_text">
+							<input type="email" autocomplete="off" placeholder="New Password" required>
+						</div>
+						<div class="input_text">
+							<input type="password" autocomplete="off" placeholder="Change Password" required> 
+						</div>
+						<div class="btn_area">
+							<button type="button" class="btn" id="btnModal" (click)="passwordReset()">Change Password</button>
+							<button type="button" class="btn back" id="btnModal" (click)="loginPageType = 'login'">Back</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- modal dom -->
+<div class="dimmed" [class.on]="isModalOn"></div>
+<div class="modal_area default" [class.on]="isModalOn">
+	<div class="header">
+		<strong class="pop_tit">{{modalTitle}}</strong>
+	</div>
+	<div class="content">
+		<p class="s_dsc">{{modalText}}</p>
+		<div class="btn_area" *ngIf="loginPageType === 'forget-id'">
+			<button type="reset" class="btn inline white" style="width:144px" (click)="modalResetClick()">Reset</button>
+			<button type="button" class="btn inline white btnModalClose" style="width:144px" (click)="modalOkClick()">OK</button>
+		</div>
+		<div class="btn_area" *ngIf="loginPageType === 'forget-password'">
+			<button type="button" class="btn white w300 btnModalClose" (click)="modalOkClick()">OK</button>
+		</div>
+		<div class="btn_area" *ngIf="loginPageType === 'reset-password'">
+			<button type="button" class="btn white w300 btnModalClose" (click)="modalOkClick()">OK</button>
+		</div>
+	</div>
+</div>

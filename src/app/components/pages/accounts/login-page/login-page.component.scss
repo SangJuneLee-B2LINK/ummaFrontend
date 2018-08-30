@@ -1,0 +1,201 @@
+/* login */
+
+*,
+:after,
+:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.login {
+	background: #f2f2f2;
+	font-weight: bold;
+	letter-spacing: 0.5px
+}
+
+.login .tab_menu {
+	display: table;
+	width: 100%;
+	table-layout: fixed
+}
+
+.login .tab_menu a {
+	display: table-cell;
+	width: 170px;
+	height: 47px;
+	line-height: 47px;
+	background: #e7eeef;
+	font-weight: bold;
+	color: #b9b9b9
+}
+
+.login .tab_menu a.on {
+	background: #fff;
+	color: #3a38f2
+}
+
+.login .logo {
+	display: inline-block;
+	width: 65px;
+	height: 55px;
+	margin: 0 auto 0
+}
+
+.login .tab_cont .logo {
+	margin: 73px auto 0
+}
+
+.login .logo img {
+	width: 65px;
+	height: 55px
+}
+
+.login .top_content {
+	float: none;
+	margin: 0 0 13px;
+	padding-top: 0;
+	width: auto;
+	text-align: center
+}
+
+.login .column .visual {
+	height: 100%;
+	background: url(../../../../../assets/images/login/bg_intro.jpg) no-repeat 100% 50%;
+	background-size: cover
+}
+
+.login .column .form {
+	display: inline-block;
+	width: 300px
+}
+
+.login .column .form.login {
+	width: 340px
+}
+
+.login .column .form .box {
+	display: table-cell
+}
+
+.login .column .form .tab_cont.box {
+	display: none;
+	padding: 0 20px;
+	background: #fff
+}
+
+.login .column .form .tab_cont.box.on {
+	display: table-cell
+}
+
+.login .login_title {
+	margin-top: 36px
+}
+
+.login .checkbox_box {
+	margin-top: 24px
+}
+
+.login .checkbox_box label {
+	color: #3f3f3f
+}
+
+.login .input_text {
+    margin-top: 14px;
+    position: relative;
+}
+
+.login .input_text span{
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    top: 5px;
+    right: 3px;
+    font-size: 15px;
+}
+
+.login .input_text+.login .input_text {
+	margin-top: 14px
+}
+
+.login .btn {
+	width: 300px;
+	border-radius: 0;
+	font-weight: bold;
+	background: #000
+}
+
+.login .btn.white {
+	background: #fff
+}
+
+.login .btn.back {
+	margin: 10px 0 0 0
+}
+.info_text {
+	margin-top: 20px;
+	font-size: 14px
+}
+
+.btn_area {
+	margin-top: 32px
+}
+
+.btn_area .bar {
+	margin: 15px 0 16px
+}
+
+.btn_area .btn.w300 {
+	display: inline-block;
+	width: 300px
+}
+
+.link_area {
+	margin: 16px 0 33px;
+	font-size: 0;
+	white-space: nowrap
+}
+
+.link_area a {
+	display: inline-block;
+	width: 50%;
+	text-align: left;
+	font-size: 13px;
+	color: #3f3f3f
+}
+
+.link_area a:last-child {
+	text-align: right
+}
+
+.btn.white {
+	border: 1px solid #000
+}
+
+.btn.white:hover {
+	color: #000
+}
+
+.modal_area .btn.inline {
+	width: 148px
+}
+
+/* harf layout */
+
+.harf {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%
+}
+
+.harf .column {
+	display: table-cell;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle
+}
+
+.harf .visual {
+	min-height: 100%;
+	padding: 0 20%
+}

@@ -1,0 +1,83 @@
+<div id="wrap">
+    <div id="container">
+        <div class="tag_wrap filter">
+            <div class="inner">
+                
+                <div class="tag_area">
+                    <span *ngFor="let tag of selectedFilterTags" class="tag">{{tag}}
+                        <button type="button" class="tag_delete" (click)="deleteFilter(tag)"></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="product_inner">
+            <app-filter-condition (onFilterChange)="onFilterChange($event)" (onTagsChange)="onTagsChange($event)" (onCategoryChange)="onCategoryChange($event)"></app-filter-condition>
+            <div class="product_list">
+                <div class="product_list_top">
+                    <strong class="s_title">{{productCount}} Products Found</strong>
+                    <div class="select_area gray">
+                        <div class="select_box" (click)="toggleSelectbox($event)">
+                            <a id="sortby_title" class="slct_head">{{sortBy || 'Sorting criteria'}}</a>
+                            <ul id="sortby_ul" class="slct_list" (click)="choiceSelectbox($event)" data-input-name="sortBy">
+                                <li class="on">
+                                    <a>popular</a>
+                                </li>
+                                <li>
+                                    <a>latest</a>
+                                </li>
+                                <li>
+                                    <a>sale volume</a>
+                                </li>
+                                <li>
+                                    <a>price</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li *ngFor="let Product of Products " class="" (click)="onSelect(Product)">
+                            <div class="box">
+                                <div class="thumb productFromPage" routerLink="/members/product/detail/{{Product.id}}">
+                                  <img src="{{Product.images}}" alt="{{Product.name}}" style="width:220px;height:220px">
+                                </div>
+                                <div class="product_info">
+                                  <div class="btns">
+                                    <button type="button" class="btn_wish" (click)="clickLike($event)"><span class="blind">like</span></button>
+                                    <button type="button" class="btn_inquiry" (click)="clickMail($event)"><span class="blind">inquiry</span></button>
+                                  
+                                  </div>
+                                  <div class="text">
+                                    <strong class="item_name">  {{Product.name}}</strong>
+                                    <p class="brand_name">{{brandName}}</p>
+                                  </div>
+                                  <div class="price">
+                                    <b>{{Product.moq}}</b> Pieces - US <b>${{Product.retailPrice}}</b>
+                                  </div>
+                                </div>
+                              </div>
+                         
+                    </li>
+                </ul>
+                <div class="paging_wrap">
+                    <div class="paging_area">
+                        <button type="button" class="btn_prev">&lt;</button>
+                        <span class="paging">
+                            <a href="#" class="on">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                        </span>
+                        <button type="button" class="btn_next">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
