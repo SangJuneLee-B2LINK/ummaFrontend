@@ -14,7 +14,7 @@
             <app-filter-condition (onFilterChange)="onFilterChange($event)" (onTagsChange)="onTagsChange($event)" (onCategoryChange)="onCategoryChange($event)"></app-filter-condition>
             <div class="product_list">
                 <div class="product_list_top">
-                    <strong class="s_title">{{productCount}} Products Found</strong>
+                    <strong class="s_title"> {{Products.length}} Products Found</strong>
                     <div class="select_area gray">
                         <div class="select_box" (click)="toggleSelectbox($event)">
                             <a id="sortby_title" class="slct_head">{{sortBy || 'Sorting criteria'}}</a>
@@ -37,6 +37,7 @@
                 </div>
                 <ul>
                     <li *ngFor="let Product of Products " class="" (click)="onSelect(Product)">
+                       
                             <div class="box">
                                 <div class="thumb productFromPage" routerLink="/members/product/detail/{{Product.id}}">
                                   <img src="{{Product.images}}" alt="{{Product.name}}" style="width:220px;height:220px">

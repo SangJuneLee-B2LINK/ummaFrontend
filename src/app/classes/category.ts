@@ -1,6 +1,7 @@
 export class Category {
     id: Number;
-    parentId: Number;
+    parentCd: Number;
+    code: Number;
     depth: Number;
     sort: Number;
     name: string;

@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Brand } from '../../../classes/brand';
 import { BrandsService } from '../../../services/brands.service';
 import { Category } from '../../../classes/category';
-import { CategoriesService } from '../../../services/categories.service';
+import { Country } from '../../../classes/country';
+import { CountryService } from '../../../services/country.service';
 
 @Component({
   selector: 'app-filter-condition',
@@ -13,21 +14,23 @@ export class FilterConditionComponent implements OnInit {
   @Input() isBrandHide;
   Brands: Brand [];
   Categories: Category [];
+  Countrys: Country [];
 
-  constructor(private brandsService: BrandsService, private categoriesService: CategoriesService) { 
+  constructor(private brandsService: BrandsService, private countryService: CountryService) { 
   }
 
   ngOnInit() {
     this.getBrands();
-    this.getCategories();
+ 
   }
   getBrands(): void {
     this.brandsService.getBrands()
     .subscribe(Brands => this.Brands = Brands);
   }
-  getCategories(): void {
-    this.categoriesService.getCategories()
-    .subscribe(Categories => this.Categories = Categories);
+
+  getCountries(): void {
+    this.countryService.getCountries()
+    .subscribe(Countrys => this.Countrys = Countrys);
   }
 
 }

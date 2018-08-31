@@ -13,6 +13,7 @@ import { BrandPageComponent } from '../components/pages/brand/brand-page/brand-p
 import { ProductPageComponent } from '../components/pages/products/product-page/product-page.component';
 import { ProductDetailPageComponent } from '../components/pages/products/product-detail-page/product-detail-page.component';
 import { BrandProductPageComponent } from '../components/pages/brand/brand-product-page/brand-product-page.component';
+import { ErrorPageComponent } from '../components/error-page/error-page.component';
 
 
 
@@ -60,6 +61,16 @@ const routes: Routes = [
         component: ProductDetailPageComponent
       },
     ]
+  },
+
+  // 404 패이지
+  {
+    path: 'page-not-found', 
+    component: ErrorPageComponent
+  },
+  {
+    path: '**', 
+    redirectTo: '/page-not-found'
   }
 ]
 

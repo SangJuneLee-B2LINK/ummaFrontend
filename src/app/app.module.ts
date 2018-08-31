@@ -42,6 +42,8 @@ import { ProductCardComponent } from './components/reuses/product-card/product-c
 import { ChoiceTagComponent } from './components/reuses/choice-tag/choice-tag.component';
 import { BrandsService } from './services/brands.service';
 import { ProductsService } from './services/products.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { CountryService } from './services/country.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { ProductsService } from './services/products.service';
     ConnectMailComponent,
     FilterConditionComponent,
     ProductCardComponent,
-    ChoiceTagComponent
+    ChoiceTagComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +86,7 @@ import { ProductsService } from './services/products.service';
     HttpClientModule,
     NgHttpLoaderModule
   ],
-  providers: [BrandsService,ProductsService],
+  providers: [BrandsService,ProductsService,CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

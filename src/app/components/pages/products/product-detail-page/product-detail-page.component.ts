@@ -26,6 +26,7 @@ export class ProductDetailPageComponent implements OnInit {
       this.Product.pricingTable = JSON.parse(this.Product.pricingTable);
       this.Product.invalidCountry = JSON.parse(this.Product.invalidCountry);
       this.Product.certificate = JSON.parse(this.Product.certificate);
+      this.Product.images = JSON.parse(this.Product.images);
     console.log(typeof this.Product.pricingTable)
 
     }, 1000)

@@ -1,5 +1,5 @@
 export class Country {
-    id: string;
+    id: number;
     parentId: Number;
     depth: Number;
     sort: Number;

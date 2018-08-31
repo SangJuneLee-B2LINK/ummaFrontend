@@ -15,6 +15,7 @@ export class ProductPageComponent implements OnInit {
 efDom;
  
   Products: Product [];
+  productCount: Array<Product>;
   product: Product;
   selectedProduct: Product;
   error: any;
@@ -37,8 +38,6 @@ efDom;
   ngOnInit(): void {
     this.getProducts();
 
-
-    
   }
  
 

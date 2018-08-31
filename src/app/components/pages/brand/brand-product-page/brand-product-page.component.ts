@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./brand-product-page.component.css']
 })
 export class BrandProductPageComponent implements OnInit {
-  detailUsed = false;
+  detailUsed = true;
   isShowBrandStory = false;
   @Input()Brand: Brand;
 

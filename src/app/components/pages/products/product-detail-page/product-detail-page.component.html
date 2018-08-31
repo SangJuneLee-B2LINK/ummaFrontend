@@ -3,8 +3,10 @@
         <div class="product_detail">
             <div class="inner">
                 <div class="thumb_area">
-                    <div class="thumb">
-                        <img [src]='Product.images' alt="">
+                    <div class="thumb" >
+                        <div *ngFor="let image of Product.images; let i=index">
+                        <img src="{{image}}" alt="" *ngIf="i<1">
+                            </div>
                     </div>
                     <div class="btn_area">
                         <button type="button" class="btn_wish">
@@ -82,7 +84,7 @@
                             <span class="ico">inquiry</span>CONNECT</button>
                     </div>
                     <div class="content">
-                        <strong class="s_title">common labs</strong>
+                        <strong class="s_title">{{Product.brId}}</strong>
                         <strong class="s_title">Items: {{Product.stock}}</strong>
                    <!-- brand description -->
                     </div>
@@ -107,9 +109,8 @@
                                             <div class="text">Category</div>
                                         </th>
                                         <td>
-                                            <div class="text">{{Product.catIdDepth1}}
-                                                <span class="bar">&gt;</span> Category2
-                                                <span class="bar">&gt;</span> Category3</div>
+                                            <div class="text">{{Product.catCd}}
+                                               </div>
                                         </td>
                                     </tr>
                                     <tr>
