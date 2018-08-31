@@ -95,8 +95,8 @@
         <h2 class="tit">Countries</h2>
         <div class="scroll_area">
             <ul>
-                <li *ngFor="let country of Countrys" class="scroll_click_content" (click)="filterCountry(country)">
-                    <a>{{country.name}}</a>
+                <li *ngFor="let Country of Countries" class="scroll_click_content" (click)="filterCountry(country)">
+                    <a> &#8226; {{Country.name}}</a>
                 </li>
             </ul>
         </div>

@@ -13,14 +13,14 @@ import { CountryService } from '../../../services/country.service';
 export class FilterConditionComponent implements OnInit {
   @Input() isBrandHide;
   Brands: Brand [];
-  Categories: Category [];
-  Countrys: Country [];
+  Countries: Country [];
 
   constructor(private brandsService: BrandsService, private countryService: CountryService) { 
   }
 
   ngOnInit() {
     this.getBrands();
+    this.getCountries();
  
   }
   getBrands(): void {
@@ -30,7 +30,7 @@ export class FilterConditionComponent implements OnInit {
 
   getCountries(): void {
     this.countryService.getCountries()
-    .subscribe(Countrys => this.Countrys = Countrys);
+    .subscribe(Countries => this.Countries = Countries);
   }
 
 }

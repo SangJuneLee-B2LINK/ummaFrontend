@@ -7,7 +7,7 @@ import { Country } from '../classes/country';
 
 @Injectable()
 export class CountryService {
-  private CountryUrl = 'app/Countrys';
+  private CountryUrl = 'app/Countries';
 
   constructor(
     private http: HttpClient
@@ -21,7 +21,7 @@ export class CountryService {
 
   getCountry(id: number): Observable<Country> {
     return this.getCountries().pipe(
-      map(Countrys => Countrys.find(Country => Country.id === id))
+      map(Countries => Countries.find(Country => Country.id === id))
     );
   }
  
