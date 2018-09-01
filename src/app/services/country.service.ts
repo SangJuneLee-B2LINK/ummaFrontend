@@ -27,7 +27,7 @@ export class CountryService {
  
 
   private handleError(res: HttpErrorResponse | any) {
-    return observableThrowError(res.error || 'Server error');
+    return observableThrowError(res.error || 'No countries found');
   }
  
   

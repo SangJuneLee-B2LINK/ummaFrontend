@@ -2,7 +2,7 @@
   <div id="container">
       <div class="inner">
           <div class="top_content">
-              <h2 class="h2_title f_agaramond">Brand</h2>
+              <h2 class="h2_title">Brands</h2>
               <div class="top_search_bar">
                   <div class="input_text">
                       <input type="search" placeholder="Brand" [(ngModel)]="searchValue" (input)="inputValue($event)">
@@ -39,6 +39,10 @@
               <button type="button" class="keyword">Y</button>
               <button type="button" class="keyword">Z</button>
               <button type="button" class="keyword etc">ETC</button>
+          </div>
+          <div>
+              <br>
+              <h4><span style="color:#dbb8a7">{{Brands.length}}</span> to choose from</h4>
           </div>
           <div *ngIf="!isShowSearched" class="keyword_content">
               <div id="A" class="box on">

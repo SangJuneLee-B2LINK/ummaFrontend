@@ -1,15 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 @charset "utf-8";
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 /* reset css */
 
 *:focus,
 button,
 input {
   outline: none;
+}
+
+.transparent-curtain {
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 /*-------------------------------------------------------------------------------*/
@@ -83,11 +91,6 @@ input {
 /* common_service.css */
 
 /* font */
-
-.roboto {
-  font-family: 'Open Sans', sans-serif;
-
-}
 
 @font-face {
   font-family: "Avenir";
@@ -2339,5 +2342,3 @@ img.ui-datepicker-trigger {
     list-style: disc !important;
   }
 }
-
-

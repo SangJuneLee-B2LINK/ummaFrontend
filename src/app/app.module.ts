@@ -86,7 +86,7 @@ import { CountryService } from './services/country.service';
     HttpClientModule,
     NgHttpLoaderModule
   ],
-  providers: [BrandsService,ProductsService,CountryService],
+  providers: [BrandsService,ProductsService,CountryService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

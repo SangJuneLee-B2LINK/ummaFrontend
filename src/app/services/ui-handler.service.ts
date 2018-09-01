@@ -4,12 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UiHandlerService {
+  openedSelectbox;
 
   constructor() { }
 
   toggleSelectbox(event, efDom) {
+    this.openedSelectbox = event.target.parentNode.parentNode;
     efDom.querySelectorAll('.select_area').forEach((elem) => {
-      if(elem  === event.target.parentNode.parentNode) {
+      if(elem  === this.openedSelectbox) {
         elem.classList.toggle('on');
       }else {
         elem.classList.remove('on');
@@ -17,7 +19,7 @@ export class UiHandlerService {
     });
   }
 
-  //selectbox의 option 선택 리스너≈
+  //selectbox의 option 선택 리스너
   choiceSelectbox(event, self) {
     let selfRef = self;
     let target = event.target;

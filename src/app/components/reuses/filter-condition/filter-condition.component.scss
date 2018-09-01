@@ -1,15 +1,42 @@
 /* filter_wrap */
 .filter_wrap .checkbox_wrap{margin:-5px 0 5px}
-.filter_wrap .checkbox_area{padding-left:28px}
+.filter_wrap .checkbox_area{padding-left:20px}
 .filter_wrap .checkbox_box{margin-top:13px}
-.filter_wrap .checkbox_box label{letter-spacing:0.7px;color:#000}
+.filter_wrap .checkbox_box label{color:#000}
 .filter_wrap .input_area{position:relative;padding-right:35px}
 .filter_wrap .input_text{border-right:0}
 .filter_wrap .btn_add{position:absolute;right:0;top:0;width:35px;height:37px;border:1px solid #000;border-left:1px solid #e9e8e8;background:#f8f8f8 url(../../../../assets/images/common/btn_add.png) no-repeat 50% 50%}
 .filter_wrap .scroll_area{margin-top:5px;background:#f8f8f8}
 .filter_wrap .scroll_area ul{overflow-x:hidden;overflow-y:auto;max-height:125px;padding:2px 10px}
 .filter_wrap {
+    margin-left: -40px;
 
+    .category {
+        .checkbox_wrap {
+            font-size: 13px;
+
+            .checkbox_box {
+                height: 13px;
+                
+                .category_input {
+                    width: 11px !important;
+                    height: 11px !important;
+                    top: 2px;
+                    left: 1px;
+                }
+    
+                .category_label:after {
+                    width: 11px !important;
+                    height: 11px !important;
+                    top: 2px;
+                }
+
+                .depth2_label {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
     .msrp {
 
         .msrp_input {
@@ -29,7 +56,6 @@
             height: 30px;
         }
     }
-
 }
 
 
@@ -58,5 +84,3 @@
 .scroll_click_content:hover {
     background-color: #f7e4d0;
 }
-
-.filterHeader {font-size:20px;}
