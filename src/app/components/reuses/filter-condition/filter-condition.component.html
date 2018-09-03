@@ -148,7 +148,7 @@
         </div>
     </div> -->
     <div *ngIf="!isBrandHide" class="brand">
-        <h2 class="tit">Brands ({{Brands.length}} Brands) </h2>
+        <!-- <h2 class="tit">Brands ({{Brands.length}} Brands) </h2> -->
         <div class="scroll_area">
             <ul>
                 <li *ngFor="let Brand of Brands" class="scroll_click_content" (click)="filterBrand(Brand)">
@@ -175,9 +175,9 @@
         </div>
     </div>
     <div class="country">
-        <h2 class="tit">Countries ({{Countries.length}} Countries)  </h2>
+        <!-- <h2 class="tit">Countries ({{Countries.length}} Countries)  </h2> -->
         <div class="scroll_area">
-            <ul>
+                <ul>
                 <li *ngFor="let Country of Countries" class="scroll_click_content" (click)="filterCountry(Country)">
                     <a> &#8226; {{Country.name}}</a>
                 </li>

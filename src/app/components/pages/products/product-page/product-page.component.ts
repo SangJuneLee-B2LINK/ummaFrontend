@@ -57,16 +57,22 @@ export class ProductPageComponent implements OnInit {
     this.productsService
       .getProducts()
       .subscribe(
-        Products => (this.Products = Products),
+        Products => {
+          this.Products = Products;
+          this.Products.forEach((product) => {
+            product.images = JSON.parse(product.images);
+          });
+        },
         error => (this.error = error)
       )
+
   }
 
   ngOnInit(): void {
     this.getProducts();
     this.efDom = this.elementRef.nativeElement;
     this.routerStateService.productListComp = this;
-
+    
     //이전 페이지가 detail 페이지인 경우 userDataService에 캐시된 정보를 가져와 보여준다
     if(this.routerStateService.previousUrl && this.routerStateService.previousUrl.indexOf('/product/detail') !== -1) {
       console.log(1);
@@ -114,6 +120,9 @@ export class ProductPageComponent implements OnInit {
     // }
 
   }
+
+
+
   ngOnDestroy() {
     this.routerStateService.productListComp = null;
   }
