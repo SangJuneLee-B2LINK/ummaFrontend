@@ -82,8 +82,8 @@
                         </div>
                     </div>
                     <ul>
-                        <li *ngFor="let product of filteredProducts">
-                            <app-product-card [product]="product"></app-product-card>
+                        <li *ngFor="let Product of  Products" >
+                             {{Product.name}}
                         </li>
                     </ul>
                     <div class="paging_wrap">

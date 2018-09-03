@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="product_inner">
-            <app-filter-condition (onFilterChange)="onFilterChange($event)" (onTagsChange)="onTagsChange($event)" (onCategoryChange)="onCategoryChange($event)"></app-filter-condition>
+            <app-filter-condition [inputCategories]="selectedFilter.category" (onFilterChange)="onFilterChange($event)" (onCategoryChange)="onCategoryChange($event)"></app-filter-condition>
             <div class="product_list">
                 <div class="product_list_top">
                     <strong class="s_title"> <span style="color:#dbb8a7">{{Products.length}}</span>  Products Found</strong>
@@ -20,16 +20,19 @@
                             <a id="sortby_title" class="slct_head">{{sortBy || 'Sorting criteria'}}</a>
                             <ul id="sortby_ul" class="slct_list" (click)="choiceSelectbox($event)" data-input-name="sortBy">
                                 <li class="on">
-                                    <a>popular</a>
+                                    <a>Popular</a>
                                 </li>
                                 <li>
-                                    <a>latest</a>
+                                    <a>Latest</a>
                                 </li>
                                 <li>
-                                    <a>sale volume</a>
+                                    <a>By Sale Volume</a>
                                 </li>
                                 <li>
-                                    <a>price</a>
+                                    <a>Lowest Price to Highest</a>
+                                </li>
+                                <li>
+                                    <a>Highest Price to Lowest</a>
                                 </li>
                             </ul>
                         </div>
@@ -40,7 +43,9 @@
                        
                             <div class="box">
                                 <div class="thumb productFromPage" routerLink="/members/product/detail/{{Product.id}}">
-                                  <img src="{{Product.images}}" alt="{{Product.name}}" style="width:220px;height:220px">
+                                  <div>
+                                    <img src="" alt="{{Product.name}}" style="width:220px;height:220px">
+                                  </div>
                                 </div>
                                 <div class="product_info">
                                   <div class="btns">
@@ -50,7 +55,7 @@
                                   </div>
                                   <div class="text">
                                     <strong class="item_name">  {{Product.name}}</strong>
-                                    <p class="brand_name">{{brandName}}</p>
+                                    <p class="brand_name">{{Product.brId}}</p>
                                   </div>
                                   <div class="price">
                                     <b>{{Product.moq}}</b> Pieces - US <b>${{Product.retailPrice}}</b>

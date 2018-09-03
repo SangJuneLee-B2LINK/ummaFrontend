@@ -22,14 +22,17 @@ export class FilterConditionComponent implements OnInit {
   @ViewChild('category') categoryRef: ElementRef;
 
   categories;
+  Brand;
+  Country;
+
 
   constructor(private brandsService: BrandsService, private countryService: CountryService, public sds: StaticDataService) { 
   }
 
   ngOnInit() {
     this.categories = this.sds.categories;
-    this.getBrands();
-    this.getCountries();
+  this.Brand =   this.getBrands();
+    this.Country =  this.getCountries();
  
   }
 

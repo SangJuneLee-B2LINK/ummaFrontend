@@ -15,7 +15,7 @@ import { UserDataService } from '../../../../services/user-data.service';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit {
-  selectedFilterTags = new Set();
+  selectedFilterTags: any;
   selectedFilter = {
     keyword: [],
     category: [],
@@ -140,6 +140,39 @@ export class ProductPageComponent implements OnInit {
   }
   
   onFilterChange(event) {
+    console.log(4142)
+    if(!this.selectedFilterTags.has(event)) {
+      let sliceIndex = event.indexOf(':');
+      let criteria = event.slice(0, sliceIndex).toLowerCase();
+      let condition = event.slice(sliceIndex + 2);
+      
+      if(criteria === 'moq') {
+        this.selectedFilter[criteria][0] = condition;
+        for(let tag of this.selectedFilterTags) {
+          if(tag.indexOf(criteria.slice(1)+':') !== -1) {
+            this.selectedFilterTags.delete(tag);
+            break;
+          }
+        }
+        this.selectedFilterTags.add(event);
+
+      } else if(criteria === 'msrp') {
+        let indexOfWave = condition.indexOf('~');
+        this.selectedFilter[criteria][0] = condition.slice(1, indexOfWave);
+        this.selectedFilter[criteria][1] = condition.slice(indexOfWave + 2);
+        for(let tag of this.selectedFilterTags) {
+          if(tag.indexOf(criteria.slice(1)+':') !== -1) {
+            this.selectedFilterTags.delete(tag);
+            break;
+          }
+        }
+        this.selectedFilterTags.add(event);
+
+      } else {
+        this.selectedFilter[criteria].push(condition);
+        this.selectedFilterTags.add(event);
+      }
+    }
   }
 
   onCategoryChange(event) {
@@ -229,6 +262,12 @@ export class ProductPageComponent implements OnInit {
     };
     this.onFilterChange(`Keyword: ${keyword}`);
     //http api 호출
+  }
+  
+  clickLike(event) {
+
+    event.stopPropagation();
+
   }
 
 

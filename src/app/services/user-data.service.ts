@@ -19,12 +19,12 @@ export class UserDataService {
   
   constructor() { 
     this.savedSelectedFilter = {
-      keyword: ['asdf'],
-      category: ['Face Oil', 'Sun Care', 'Cleansing Oils', 'Lipstick', 'Lip Tint', 'Lip Gloss', 'Lip Balm & Treatment'],
-      Brand: ['MAC'],
-      moq: [1000],
-      msrp: [13, 19], 
-      Country: ['Republic of Korea']
+      keyword: [],
+      category: [],
+      Brand: [],
+      moq: [],
+      msrp: [], 
+      Country: []
     };
   }
 
