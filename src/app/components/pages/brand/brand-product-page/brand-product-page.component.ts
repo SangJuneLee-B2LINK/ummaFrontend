@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Brand } from '../../../../classes/brand';
 import { BrandsService } from '../../../../services/brands.service';
-import { Location } from '@angular/common';
 import { Product } from '../../../../classes/product';
 import { ProductsService } from '../../../../services/products.service';
 
@@ -14,6 +13,7 @@ import { ProductsService } from '../../../../services/products.service';
 })
 export class BrandProductPageComponent implements OnInit {
   Products: Product [];
+  BrandProducts = [];
   detailUsed = true;
   isShowBrandStory = false;
   @Input()Brand: Brand;
@@ -21,8 +21,7 @@ export class BrandProductPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private brandsService: BrandsService,
-    private productsService: ProductsService,
-    private location: Location
+    private productsService: ProductsService
   ) { }
 
   ngOnInit(): void {

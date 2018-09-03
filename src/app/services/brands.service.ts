@@ -9,8 +9,7 @@ import { ProductCardComponent } from '../components/reuses/product-card/product-
 
 @Injectable()
 export class BrandsService {
-  private BrandsUrl = 'app/Brands';
-  private ProductsUrl = 'app/Products';
+  private BrandsUrl = 'app/Brands?filter[limit]=30';
 
   constructor(
     private http: HttpClient
@@ -26,11 +25,6 @@ export class BrandsService {
     return this.getBrands().pipe(
       map(Brands => Brands.find(Brand => Brand.id === id))
     );
-  }
-  getProducts() {
-    return this.http
-      .get<Product[]>(this.ProductsUrl)
-      .pipe(map(api => api), catchError(this.handleError));
   }
 
   private handleError(res: HttpErrorResponse | any) {

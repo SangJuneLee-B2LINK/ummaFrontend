@@ -8,7 +8,7 @@ import { Product } from '../classes/product';
 
 @Injectable()
 export class ProductsService {
-  private ProductsUrl = 'app/Products';
+  private ProductsUrl = 'app/Products?filter[limit]=30';
 
   constructor(
     private http: HttpClient
@@ -19,6 +19,7 @@ export class ProductsService {
       .get<Product[]>(this.ProductsUrl)
       .pipe(map(api => api), catchError(this.handleError));
   }
+
 
   getProduct(id: number): Observable<Product> {
     return this.getProducts().pipe(
