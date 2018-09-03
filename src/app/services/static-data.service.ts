@@ -22,7 +22,7 @@ export class StaticDataService {
               { id: 3, name: "Face Wash & Cleansers" },
               { id: 4, name: "Cleansing Oils" },
               { id: 5, name: "Cleansing Wipes" },
-              { id: 6, name: "Exfoliators& Scrubs" },
+              { id: 6, name: "Exfoliators & Scrubs" },
               { id: 7, name: "Toners " },
               { id: 8, name: "Makeup Removers" }
             ]

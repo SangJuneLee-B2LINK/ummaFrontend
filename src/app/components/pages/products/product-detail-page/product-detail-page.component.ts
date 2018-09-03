@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../../classes/product';
 import { ProductsService } from '../../../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Brand } from '../../../../classes/brand';
+import { BrandsService } from '../../../../services/brands.service';
  
 
 @Component({
@@ -11,15 +12,18 @@ import { Location } from '@angular/common';
   styleUrls: ['./product-detail-page.component.scss']
 })
 export class ProductDetailPageComponent implements OnInit {
-  
-  @Input()Product: Product;
 
+  @Input()Product: Product;
+  hasLiked = 0;
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService,
-    private location: Location
+    private productsService: ProductsService
   ) { }
-
+  getProduct(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productsService.getProduct(id)
+    .subscribe(Product => this.Product = Product);
+  }
   ngOnInit(): void {
     this.getProduct();
     setTimeout(()=>{
@@ -27,13 +31,20 @@ export class ProductDetailPageComponent implements OnInit {
       this.Product.invalidCountry = JSON.parse(this.Product.invalidCountry);
       this.Product.certificate = JSON.parse(this.Product.certificate);
       this.Product.images = JSON.parse(this.Product.images);
-    console.log(typeof this.Product.pricingTable)
+    }, 1000);
+  }
 
-    }, 1000)
+  clickLike(event) {
+    console.log(this.hasLiked);
+    event.stopPropagation();
+    if (!this.hasLiked) {
+      this.hasLiked = 1;
+      
+  } else {
+    this.hasLiked = 0;
+     
   }
-  getProduct(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productsService.getProduct(id)
-    .subscribe(Product => this.Product = Product);
+
   }
+ 
 }

@@ -19,7 +19,7 @@ export class BrandPageComponent implements OnInit {
     this.selectedBrand = Brand;
   }
   constructor(private brandsService: BrandsService, private titleService: Title) { 
-    this.titleService.setTitle("Brands");
+    this.titleService.setTitle("List of Brands");
   }
 
   ngOnInit() {

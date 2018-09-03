@@ -10,7 +10,7 @@ import { ProductsService } from '../../../../services/products.service';
 @Component({
   selector: 'app-brand-product-page',
   templateUrl: './brand-product-page.component.html',
-  styleUrls: ['./brand-product-page.component.css']
+  styleUrls: ['./brand-product-page.component.scss']
 })
 export class BrandProductPageComponent implements OnInit {
   Products: Product [];

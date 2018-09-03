@@ -265,7 +265,7 @@ export class ProductPageComponent implements OnInit {
   }
   
   clickLike(event) {
-
+    console.log('liked');
     event.stopPropagation();
 
   }
