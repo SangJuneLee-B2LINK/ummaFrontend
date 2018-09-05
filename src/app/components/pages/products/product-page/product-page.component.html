@@ -1,6 +1,6 @@
 <div id="wrap">
     <div id="container">
-        <div *ngIf="selectedFilterTags.size !== 0" class="tag_wrap filter">
+        <!-- <div *ngIf="selectedFilterTags" class="tag_wrap filter">
             <div class="inner">
                 <strong class="s_title">Filter Condition <i class="fas fa-save" (click)="saveSelectedFilter()"></i></strong>
                 <div class="tag_area">
@@ -9,7 +9,7 @@
                     </span>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="product_inner">
             <app-filter-condition [inputCategories]="selectedFilter.category" (onFilterChange)="onFilterChange($event)" (onCategoryChange)="onCategoryChange($event)"></app-filter-condition>
             <div class="product_list">
