@@ -45,9 +45,12 @@ export class Product {
     favoriteCount: Number;
     inquiryCount: Number;
     viewCount: Number;
+    display: number;
     status: String;
+    suppliedChannel: string;
     statusUpdated: Date;
     created: Date;
+    approved: Date;
     updated: Date;
     deleted: Date;
 }
